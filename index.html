@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oln2f3QnYzIh5lIu2O6m8o2e7c8KkYy5F2W0g5m1W3kQh8xv4+Qyqzqkz2GfD9hE2+1cKQy8w1C1Fv2e7Hf0gA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root{
       --bg:#0b0b0b;
@@ -22,68 +23,123 @@
       font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.6;
     }
-    a{color:inherit; text-decoration:none}.top{
-  position:sticky; top:0; z-index:20; background:linear-gradient(180deg, rgba(0,0,0,.55), transparent);
-  backdrop-filter:saturate(120%) blur(4px);
-}
-.nav{
-  max-width:1200px; margin:0 auto; padding:18px 22px; display:flex; align-items:center; justify-content:center; gap:28px; font-weight:600; color:#cfcfcf;
-}
-.nav a{position:relative; padding:4px 6px}
-.nav a.active::after, .nav a:hover::after{
-  content:""; position:absolute; left:6px; right:6px; bottom:-6px; height:2px; background:var(--accent); border-radius:999px;
-}
+    a{color:inherit; text-decoration:none}
+    .top{
+      position:sticky; top:0; z-index:20; background:linear-gradient(180deg, rgba(0,0,0,.55), transparent);
+      backdrop-filter:saturate(120%) blur(4px);
+    }
+    .nav{
+      max-width:1200px; margin:0 auto; padding:18px 22px; display:flex; align-items:center; justify-content:center; gap:28px; font-weight:600; color:#cfcfcf;
+    }
+    .nav a{position:relative; padding:4px 6px}
+    .nav a.active::after, .nav a:hover::after{
+      content:""; position:absolute; left:6px; right:6px; bottom:-6px; height:2px; background:var(--accent); border-radius:999px;
+    }
 
-.hero{max-width:1200px; margin:0 auto; padding:64px 22px 96px; display:grid; grid-template-columns: 520px 1fr; gap:56px; align-items:center}
+    .hero{max-width:1200px; margin:0 auto; padding:64px 22px 96px; display:grid; grid-template-columns: 520px 1fr; gap:56px; align-items:center}
 
-.photo-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 520px;
-  margin-inline: auto;
-  border-radius: 50%;   /* ensures container is circular */
-  overflow: hidden;     /* hides any image outside the circle */
-}
+    .photo-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 520px;
+      margin-inline: auto;
+      border-radius: 50%;   
+      overflow: hidden;     
+    }
 
-.badge-name{position:absolute; left:8px; top:-8px; font-weight:700; color:#ff9e9e; letter-spacing:.6px}
-.photo-wrap::before{
-  content:""; position:absolute; inset:0; margin:auto; width:92%; height:92%; border-radius:999px; background:radial-gradient(circle at 60% 40%, #ff8070 0%, #ff4d4d 60%, #d63a3a 100%); filter:saturate(110%) contrast(110%);
-  transform:translate(-4%, -2%) rotate(-4deg);
-}
-.photo {
-  position: absolute;
-  inset: 0;              /* stretch to all sides of container */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* ensures the photo fills the circle */
-  border-radius: 50%;    /* makes it circular */
-  box-shadow: 0 20px 60px rgba(0,0,0,.65);
-  filter: contrast(105%);
-}
+    .badge-name{position:absolute; left:8px; top:-8px; font-weight:700; color:#ff9e9e; letter-spacing:.6px}
+    .photo-wrap::before{
+      content:""; position:absolute; inset:0; margin:auto; width:92%; height:92%; border-radius:999px; background:radial-gradient(circle at 60% 40%, #ff8070 0%, #ff4d4d 60%, #d63a3a 100%); filter:saturate(110%) contrast(110%);
+      transform:translate(-4%, -2%) rotate(-4deg);
+    }
+    .photo {
+      position: absolute;
+      inset: 0;              
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     
+      border-radius: 50%;    
+      box-shadow: 0 20px 60px rgba(0,0,0,.65);
+      filter: contrast(105%);
+    }
 
+    .headline{font-size:56px; line-height:1.05; margin:0 0 6px}
+    .headline span.accent{color:var(--accent)}
+    .sub{font-size:38px; margin:4px 0 18px}
+    .lead{max-width:720px; color:var(--muted)}
 
+    .icons{display:flex; gap:14px; margin:26px 0}
+    .icon-btn{width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:#121212}
+    .icon-btn:hover{border-color:var(--accent); color:var(--accent)}
 
-.headline{font-size:56px; line-height:1.05; margin:0 0 6px}
-.headline span.accent{color:var(--accent)}
-.sub{font-size:38px; margin:4px 0 18px}
-.lead{max-width:720px; color:var(--muted)}
+    .cta{margin-top:16px; display:flex; gap:14px; flex-wrap:wrap}
+    .btn{display:inline-block; padding:12px 28px; border-radius:999px; border:1.5px solid var(--accent); color:var(--accent); font-weight:600; background:transparent; transition:all .2s}
+    .btn:hover{background:var(--accent); color:#fff; box-shadow:0 10px 26px rgba(255,77,77,.28)}
 
-.icons{display:flex; gap:14px; margin:26px 0}
-.icon-btn{width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:#121212}
-.icon-btn:hover{border-color:var(--accent); color:var(--accent)}
+    /* NEW: Section headlines accent color */
+    h2 {color: var(--accent);}
 
-.cta{margin-top:16px; display:flex; gap:14px; flex-wrap:wrap}
-.btn{display:inline-block; padding:12px 28px; border-radius:999px; border:1.5px solid var(--accent); color:var(--accent); font-weight:600; background:transparent; transition:all .2s}
-.btn:hover{background:var(--accent); color:#fff; box-shadow:0 10px 26px rgba(255,77,77,.28)}
-
-@media (max-width: 980px){
-  .hero{grid-template-columns:1fr; gap:28px; padding-top:44px}
-  .headline{font-size:44px}
-  .sub{font-size:28px}
-  .photo-wrap{max-width:420px}
-}
-
+    /* === PROJECT CARDS === */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.4);
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.6);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-info h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--accent);
+    }
+    .project-info p {
+      font-size: 14px;
+      color: var(--muted);
+      flex: 1;
+    }
+    .project-links {
+      margin-top: 14px;
+    }
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .project-links a:hover {text-decoration: underline;}
+    
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; gap:28px; padding-top:44px}
+      .headline{font-size:44px}
+      .sub{font-size:28px}
+      .photo-wrap{max-width:420px}
+    }
   </style>
 </head>
 <body>
@@ -96,75 +152,98 @@
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>  <header id="home" class="hero">
+  </div>  
+
+  <header id="home" class="hero">
     <div class="photo-wrap">
       <div class="badge-name">Sara Kamal</div>
       <img class="photo" src="my-photo.jpg" alt="Portrait of Sara Kamal" />
-    </div><div>
-  <h1 class="headline">Hi, It's <span class="accent">Sara Kamal</span></h1>
-  <p class="sub">I'm a <span class="accent">Software Tester</span></p>
-  <p class="lead">Passionate about ensuring software quality and building reliable applications.</p>
+    </div>
+    <div>
+      <h1 class="headline">Hi, It's <span class="accent">Sara Kamal</span></h1>
+      <p class="sub">I'm a <span class="accent">Software Tester</span></p>
+      <p class="lead">Passionate about ensuring software quality and building reliable applications.</p>
 
-  <div class="icons" aria-label="Social links">
-    <a class="icon-btn" href="https://www.linkedin.com/in/sara-kamal-981528357" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a class="icon-btn" href="https://github.com/sarahkml" aria-label="GitHub"><i class="fab fa-github"></i></a>
-  </div>
+      <div class="icons" aria-label="Social links">
+        <a class="icon-btn" href="https://www.linkedin.com/in/sara-kamal-981528357" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="icon-btn" href="https://github.com/sarahkml" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
 
-  <div class="cta">
-    <a class="btn" href="#contact">Hire me</a>
-    <a class="btn" href="Sara_Kamal_CV.pdf" download>Download CV</a>
-  </div>
-</div>
+      <div class="cta">
+        <a class="btn" href="#contact">Hire me</a>
+        <a class="btn" href="Sara_Kamal_CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </header>  
 
-  </header>  <main style="max-width:1200px;margin:0 auto;padding:0 22px 120px">
+  <main style="max-width:1200px;margin:0 auto;padding:0 22px 120px">
+
     <section id="services" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
       <h2>Services</h2>
       <ul>
         <li>Manual Testing – Designing and executing test cases to ensure software quality.</li>
         <li>Bug Reporting & Documentation – Documenting issues clearly to support developers in resolving defects.</li>
       </ul>
-    </section><section id="skills" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming Languages:</strong> Java, C++, MATLAB</li>
-    <li><strong>Web Technologies:</strong> HTML, CSS</li>
-    <li><strong>Version Control:</strong> GitHub</li>
-  </ul>
-</section>
+    </section>
 
-<section id="education" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
-  <h2>Education</h2>
-  <ul>
-    <li>Bachelor’s Degree in Computer Science & Information – 3rd-year student</li>
-    <li>Digital Pioneers of Egypt Scholarship – Software Testing Track</li>
-    <li>Sprints x Microsoft Summer Camp - Software Testing– Completed project-based certification</li>
-  </ul>
-</section>
+    <section id="skills" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Java, C++, MATLAB</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS</li>
+        <li><strong>Version Control:</strong> GitHub</li>
+      </ul>
+    </section>
 
-<section id="experience" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
-  <h2>Experience / Projects</h2>
-  <h3>DemoBlaze Testing Project</h3>
-  <p>A comprehensive software testing project for the DemoBlaze web app, including test scenarios, functional test cases, defect logs, usability and release reports, regression strategy, and Jira traceability.</p>
-  <ul>
-    <li>Designed and executed test scenarios and functional test cases.</li>
-    <li>Documented defects and usability observations.</li>
-    <li>Formulated regression strategies.</li>
-    <li>Maintained traceability between user stories, test cases, and defects.</li>
-  </ul>
-  <p>GitHub: <a href="https://github.com/sarahkml/DemoBlaze-Testing-Project" target="_blank">DemoBlaze Testing Project Repository</a></p>
-</section>
+    <section id="education" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
+      <h2>Education</h2>
+      <ul>
+        <li>Bachelor’s Degree in Computer Science & Information – 3rd-year student</li>
+        <li>Digital Pioneers of Egypt Scholarship – Software Testing Track</li>
+        <li>Sprints x Microsoft Summer Camp - Software Testing – Completed project-based certification</li>
+      </ul>
+    </section>
 
-<section id="contact" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
-  <h2>Contact</h2>
-  <p>Let’s connect and collaborate!</p>
-  <ul>
-    <li>Email: <a href="mailto:sarakamal1067@gmail.com">sarakamal1067@gmail.com</a></li>
-    <li>LinkedIn: <a href="https://www.linkedin.com/in/sara-kamal-981528357" target="_blank">Sara Kamal</a></li>
-    <li>GitHub: <a href="https://github.com/sarahkml" target="_blank">github.com/sarahkml</a></li>
-  </ul>
-</section>
+    <!-- ✅ PROJECT CARDS START -->
+    <section id="experience" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
+      <h2>Experience / Projects</h2>
+      <div class="projects-grid">
 
+        <div class="project-card">
+          <img src="demoblaze.png" alt="DemoBlaze Testing Project">
+          <div class="project-info">
+            <h3>DemoBlaze Testing</h3>
+            <p>A full testing project: scenarios, functional test cases, defect logs, reports, regression strategy, Jira traceability.</p>
+            <div class="project-links">
+              <a href="https://github.com/sarahkml/DemoBlaze-Testing-Project" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="calculator.png" alt="Java Swing Calculator">
+          <div class="project-info">
+            <h3>Java Swing Calculator</h3>
+            <p>A desktop calculator built with Java Swing, supporting basic arithmetic operations with a clean UI.</p>
+            <div class="project-links">
+              <a href="https://github.com/sarahkml/Java-Calculator" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ✅ PROJECT CARDS END -->
+
+    <section id="contact" style="padding:64px 0;border-top:1px solid rgba(255,255,255,.07)">
+      <h2>Contact</h2>
+      <p>Let’s connect and collaborate!</p>
+      <ul>
+        <li>Email: <a href="mailto:sarakamal1067@gmail.com">sarakamal1067@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/sara-kamal-981528357" target="_blank">Sara Kamal</a></li>
+        <li>GitHub: <a href="https://github.com/sarahkml" target="_blank">github.com/sarahkml</a></li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
-
